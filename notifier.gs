@@ -1,7 +1,7 @@
 function notify() {
-  let message = createMessage()
+  let message = createMessage();
 
-  if (message['n'] >= 25) {
+  if (message['n'] < 5) {
     // 休薬期間
     message['attachments'] = [{
       'text': '今日はおくすりのまないよ'
@@ -13,7 +13,8 @@ function notify() {
       'callback_id': 'callback_button',
       'actions': [
         { 'name': 'ok', 'text': 'のんだよ', 'type': 'button' },
-        { 'name': 'later', 'text': 'あとで', 'type': 'button' }
+        { 'name': 'later', 'text': 'あとで', 'type': 'button' },
+        { 'name': 'suspend', 'text': 'おやすみするよ', 'type': 'button' }
       ]
     }];
 
